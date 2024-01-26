@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface StopWatchProps {
-  time: number;
-  laps: number[];
+  time: string;
+  laps: string[];
 }
 
 // Stopwatch component that displays the time and laps
