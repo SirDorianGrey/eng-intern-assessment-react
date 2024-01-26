@@ -1,7 +1,23 @@
-import React from 'react'
+import React from 'react';
 
-export default function StopWatch() {
-    return(
-        <div></div>
-    )
+interface StopWatchProps {
+  time: number;
+  laps: number[];
 }
+
+// Stopwatch component that displays the time and laps
+const StopWatch: React.FC<StopWatchProps> = ({ time, laps }) => {
+  return (
+    <div>
+      <div>{time}</div>
+      <div>
+        Laps:
+        {laps.map((lap, index) => (
+          <div key={index}>{lap}</div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default StopWatch;
