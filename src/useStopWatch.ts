@@ -20,6 +20,7 @@ export default function useStopWatch() {
   const handleStart = () => {
     if (intervalId !== null) return; 
 
+    // set start time to current time
     const currentStartTime = Date.now();
     setStartTime(currentStartTime);
     const id = setInterval(() => {
@@ -37,6 +38,7 @@ export default function useStopWatch() {
     setIntervalId(null);
   };
 
+  // Reset timer
   const handleReset = () => {
     clearInterval(intervalId);
     setTime(0);
@@ -45,6 +47,7 @@ export default function useStopWatch() {
     setIntervalId(null);
   };
 
+  // Lap timer
   const handleLap = () => {
     setLaps((prevLaps) => [...prevLaps, formatTime(time)]);
   };

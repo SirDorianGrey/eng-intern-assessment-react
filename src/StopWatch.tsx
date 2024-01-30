@@ -9,11 +9,11 @@ interface StopWatchProps {
 const StopWatch: React.FC<StopWatchProps> = ({ time, laps }) => {
   return (
     <div>
-      <div>{time}</div>
-      <div>
+      <div className="time">{time}</div>
+      <div className="laps">
         Laps:
         {laps.map((lap, index) => (
-          <div key={index}>{lap}</div>
+          <div className="lapline" key={index}>{lap}</div>
         ))}
       </div>
     </div>

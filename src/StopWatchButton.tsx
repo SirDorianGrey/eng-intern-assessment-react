@@ -8,7 +8,7 @@ interface StopWatchButtonProps {
 // Button component for the stopwatch
 const StopWatchButton: React.FC<StopWatchButtonProps> = ({ label, onClick }) => {
   return (
-    <button onClick={onClick}>{label}</button>
+    <button className="StopWatchButton" onClick={onClick}>{label}</button>
   );
 }
 
