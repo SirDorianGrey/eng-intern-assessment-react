@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 export default function useStopWatch() {
+  const [elapsedTime, setElapsedTime] = useState(0);
   const [time, setTime] = useState(0);
   const [laps, setLaps] = useState([]);
   const [intervalId, setIntervalId] = useState(null);
@@ -19,16 +20,20 @@ export default function useStopWatch() {
   const handleStart = () => {
     if (intervalId !== null) return; 
 
-    setStartTime(Date.now());
+    const currentStartTime = Date.now();
+    setStartTime(currentStartTime);
     const id = setInterval(() => {
-        setTime(Date.now() - (startTime || Date.now()));
+        setTime(Date.now() - currentStartTime + elapsedTime);
       }, 1);
 
     setIntervalId(id);
   };
 
   const handleStop = () => {
+    if (intervalId === null) return; // prevent multiple clicks of stop button
+
     clearInterval(intervalId);
+    setElapsedTime(Date.now() - startTime + elapsedTime);
     setIntervalId(null);
   };
 
@@ -36,6 +41,7 @@ export default function useStopWatch() {
     clearInterval(intervalId);
     setTime(0);
     setLaps([]);
+    setElapsedTime(0);
     setIntervalId(null);
   };
 
