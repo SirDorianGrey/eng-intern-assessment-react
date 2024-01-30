@@ -1,0 +1,73 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  div {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px; /* Increase the max-width */
+    width: 90%; /* Increase the width */
+    margin: 0 auto;
+  }
+  
+  .StopWatch {
+    text-align: center;
+    font-size: 3em; /* Increase the font size */
+    margin-bottom: 20px;
+  }
+  
+  .StopWatchButton {
+    display: inline-block;
+    width: 23%;
+    padding: 10px;
+    margin: 0 1% 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .StopWatchButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .laps {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .StopWatchContainer {
+    width: 200%;
+    height: 200%;
+    transform: translateX(-25%)
+  }
+
+  guru-container{
+    display: none;
+  }
+
+  .time {
+    text-align: center;
+    font-size: xx-large;
+  }
+
+  .lapline{
+    padding: 2px;
+    text-align: center;
+  }
